@@ -21,3 +21,37 @@ The system eliminates manual file handling by providing a single access point fo
 | **Data Cleaning** | Removes currency symbols, whitespace, and normalises data types |
 | **Record Indexing** | Applies automatic sequential numbering to all entries |
 | **Result Export** | Outputs a well‑structured Excel workbook |
+
+---
+
+## 3. System Architecture
+┌─────────────────────┐
+│ GitHub Repository │
+│ (Book.xlsx) │
+└──────────┬──────────┘
+│ HTTP GET (raw)
+▼
+┌─────────────────────┐
+│ download_file() │
+└──────────┬──────────┘
+│
+▼
+┌─────────────────────┐
+│ parse_excel() │
+│ - Sheet 1 │
+│ - Sheet 2 │
+│ - Sheet 3 │
+└──────────┬──────────┘
+│
+▼
+┌─────────────────────┐
+│ Consolidated Table │
+│ ID, Name, Amount, │
+│ Headcount │
+└──────────┬──────────┘
+│
+▼
+┌─────────────────────┐
+│ processed_data │
+│ .xlsx │
+└─────────────────────┘
