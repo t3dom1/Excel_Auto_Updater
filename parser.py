@@ -12,7 +12,7 @@ import base64
 
 GITHUB_TOKEN = ''  
 REPO_OWNER = 't3dom1'
-REPO_NAME = 'Excel-Auto-Updater'
+REPO_NAME = 'Excel_Auto_Updater'
 FILE_PATH = 'Book.xlsx'
 BRANCH = 'main'
 
@@ -20,10 +20,7 @@ LOCAL_FILE = 'Book.xlsx'
 
 
 def download_file_via_api():
-    """
-    Download file using GitHub API.
-    Более стабильно, чем raw-ссылка.
-    """
+
     try:
         print(f"[{datetime.now().strftime('%H:%M:%S')}] Downloading via GitHub API...")
         
@@ -58,9 +55,7 @@ def download_file_via_api():
 
 
 def download_file_raw():
-    """
-    Fallback: download via raw URL.
-    """
+
     try:
         print(f"[{datetime.now().strftime('%H:%M:%S')}] Trying raw download...")
         
@@ -82,10 +77,7 @@ def download_file_raw():
 
 
 def download_file():
-    """
-    Try multiple methods to download the file.
-    Сначала API, потом raw, потом локальный файл.
-    """
+
     
     if download_file_via_api():
         return True
@@ -148,9 +140,9 @@ def display_table(df):
     if df is None:
         return
     
-    print("\n" + "="*80)
+    print("\n" + "="*50)
     print("CONSOLIDATED TABLE")
-    print("="*80)
+    print("="*50)
     print(df.to_string(index=False))
 
 
