@@ -83,30 +83,24 @@ def display_table(df):
     if df is None:
         return
     
-    print("\n" + "="*80)
+    print("\n" + "="*50)
     print("ОБЩАЯ ТАБЛИЦА")
-    print("="*80)
+    print("="*50)
     print(df.to_string(index=False))
     
-    print("\n" + "="*80)
-    print("СТАТИСТИКА")
-    print("="*80)
-    print(f"Всего записей: {len(df)}")
-    print(f"Общая сумма: {df['СУММА'].sum():,.2f} ₽")
-    print(f"Средняя сумма: {df['СУММА'].mean():,.2f} ₽")
 
 def main():
-    print("="*80)
+    print("="*50)
     print("EXCEL DATA SYNC")
-    print("="*80)
+    print("="*50)
     
-    # Пытаемся скачать свежий файл
+    
     success = download_file()
     
     if not success:
-        print("Использую локальный файл (если существует)")
+        print("Использован локальный файл")
+
     
-    # Парсим файл
     df = parse_excel()
     
     if df is not None:
