@@ -45,7 +45,6 @@ The system eliminates manual file handling by providing a single access point fo
 |------|---------|
 | `Book.xlsx` | Source data (manually updated) |
 | `parser.py` | Main ETL script |
-| `processed_data.xlsx` | Generated output |
 | `README.md` | Documentation |
 | `requirements.txt` | Dependencies list |
 
